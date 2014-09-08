@@ -343,6 +343,7 @@ public class Collidable extends java.lang.Object implements Cloneable {
      * space.
      *
      * @see java.awt.Polygon
+     * 
      * @return a new Java AWT Polygon created by the points in the vertices
      * ArrayList
      */
@@ -464,10 +465,10 @@ public class Collidable extends java.lang.Object implements Cloneable {
 
     /**
      * Returns the coordinate of the center of the <code>Collidable</code> in
-     * the horizontal axis.
+     * the X axis.
      *
      * @return the coordinate of the center of the <code>Collidable</code> in
-     * the horizontal axis
+     * the X axis
      */
     public Point getCenterX() {
         return new Point(
@@ -478,10 +479,10 @@ public class Collidable extends java.lang.Object implements Cloneable {
 
     /**
      * Returns the coordinate of the center of the <code>Collidable</code> in
-     * the vertical axis.
+     * the Y axis.
      *
      * @return the coordinate of the center of the <code>Collidable</code> in
-     * the vertical axis
+     * the Y axis
      */
     public Point getCenterY() {
         return new Point(
@@ -493,8 +494,6 @@ public class Collidable extends java.lang.Object implements Cloneable {
     /**
      * returns true if the <code>Collidable</code> have intersected with this
      * <code>Collidable</code>.
-     *
-     * @see dwarf.Collidable#contains(dwarf.util.Point2D)
      *
      * @param coll - the <code>Collidable</code> to be tested
      * @return true if the <code>Collidable</code> has intersected/collided with
