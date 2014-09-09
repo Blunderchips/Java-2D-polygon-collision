@@ -91,6 +91,10 @@ public class Collidable extends java.lang.Object implements Cloneable {
         this.setVertices(xPoints, yPoints);
     }
 
+    public Collidable(Polygon p) {
+        this(p.xpoints, p.ypoints);
+    }
+
     /**
      * creates a new <code>Collidable</code> from a inputed
      * <code>Collidable</code>.
@@ -113,11 +117,22 @@ public class Collidable extends java.lang.Object implements Cloneable {
 
         return points;
     }
-
+    
+    /**
+     * adds a new Point to the <code>Collidable</code>.
+     *
+     * @param point the point to be added
+     */
     public void addPoint(Point point) {
         this.vertices.add(point);
     }
-
+    
+    /**
+     * adds a new Point to the <code>Collidable</code>.
+     *
+     * @param xPos the X position of the point
+     * @param yPos the Y position of the point
+     */
     public void addPoint(int xPos, int yPos) {
         this.addPoint(new Point(xPos, yPos));
     }
@@ -445,7 +460,16 @@ public class Collidable extends java.lang.Object implements Cloneable {
 
         return true;
     }
-
+    
+    /**
+     * Returns a string representation of the object. In general, the toString
+     * method returns a string that "textually represents" this object. The
+     * result should be a concise but informative representation that is easy
+     * for a person to read. It is recommended that all subclasses override this
+     * method.
+     *
+     * @return a textually representation of this object
+     */
     @Override
     public String toString() {
         return "Collidable[" + "position: " + getPosition() + ", " + "points: " + Arrays.toString(getVertices()) + "]";
