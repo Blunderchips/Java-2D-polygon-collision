@@ -22,7 +22,6 @@
  * SOFTWARE.
  *
  */
-
 import java.awt.Point;
 import java.awt.Polygon;
 
@@ -64,10 +63,25 @@ public class Collidable extends java.lang.Object implements Cloneable {
         super();
     }
 
+    /**
+     * Construct a new <code>Collidable</code> with 3 or more points. This
+     * constructor will take the first set of points and copy them after the
+     * last set of points to create a closed shape.
+     *
+     * @param vertices An array of <code>Points</code> in x, y order.
+     */
     public Collidable(Point[] vertices) {
         this(new Point(0, 0), vertices);
     }
 
+    /**
+     * Construct a new <code>Collidable</code> with 3 or more points. This
+     * constructor will take the first set of points and copy them after the
+     * last set of points to create a closed shape.
+     *
+     * @param position the position of the <code>Collidable</code>
+     * @param vertices An array of <code>Point</code> in x, y order.
+     */
     public Collidable(Point position, Point[] vertices) {
         super();
 
@@ -91,6 +105,9 @@ public class Collidable extends java.lang.Object implements Cloneable {
         this.setVertices(xPoints, yPoints);
     }
 
+    /**
+     * @see java.awt.Polygon
+     */
     public Collidable(Polygon p) {
         this(p.xpoints, p.ypoints);
     }
@@ -117,7 +134,7 @@ public class Collidable extends java.lang.Object implements Cloneable {
 
         return points;
     }
-    
+
     /**
      * adds a new Point to the <code>Collidable</code>.
      *
@@ -126,7 +143,7 @@ public class Collidable extends java.lang.Object implements Cloneable {
     public void addPoint(Point point) {
         this.vertices.add(point);
     }
-    
+
     /**
      * adds a new Point to the <code>Collidable</code>.
      *
@@ -194,13 +211,13 @@ public class Collidable extends java.lang.Object implements Cloneable {
     /**
      * creates a new <code>Collidable</code> with the arrays given.This method
      * is called from within the constructor to initialize the
-     * <code>Collidable</code>. WARNING: Do NOT modify this code.
+     * <code>Collidable</code>. <b>WARNING: Do NOT modify this code.</b>
      *
      * @throws IllegalArgumentException if the the number of X points does not
-     * equal the number of Y points or if they contain less than 3 points.
+     * equal the number of Y points or if they contain less than 3 points
      *
-     * @param xPoints an array of the x coordinates of the polygon.
-     * @param yPoints an array of the y coordinates of the polygon.
+     * @param xPoints an array of the x coordinates of the polygon
+     * @param yPoints an array of the y coordinates of the polygon
      */
     public final void setVertices(int[] xPoints, int[] yPoints) throws IllegalArgumentException {
         if (xPoints == null || yPoints == null) {
@@ -233,7 +250,8 @@ public class Collidable extends java.lang.Object implements Cloneable {
      *
      * @param point the point t be tested
      * @return <code>true</code> if this <code>Collidable</code> contains the
-     * specified coordinates <code>(xPos; yPos)</code> {@code false} otherwise.
+     * specified coordinates <code>(xPos; yPos)</code> <code>false</code>
+     * otherwise.
      */
     public boolean contains(Point point) {
         return this.contains(point.getX(), point.getY());
@@ -358,7 +376,7 @@ public class Collidable extends java.lang.Object implements Cloneable {
      * space.
      *
      * @see java.awt.Polygon
-     * 
+     *
      * @return a new Java AWT Polygon created by the points in the vertices
      * ArrayList
      */
@@ -460,7 +478,7 @@ public class Collidable extends java.lang.Object implements Cloneable {
 
         return true;
     }
-    
+
     /**
      * Returns a string representation of the object. In general, the toString
      * method returns a string that "textually represents" this object. The
@@ -472,7 +490,7 @@ public class Collidable extends java.lang.Object implements Cloneable {
      */
     @Override
     public String toString() {
-        return "Collidable[" + "position: " + getPosition() + ", " + "points: " + Arrays.toString(getVertices()) + "]";
+        return "Collidable[" + "position: " + position + ", vertices: " + vertices + "]";
     }
 
     /**
@@ -519,7 +537,7 @@ public class Collidable extends java.lang.Object implements Cloneable {
      * returns true if the <code>Collidable</code> have intersected with this
      * <code>Collidable</code>.
      *
-     * @param coll - the <code>Collidable</code> to be tested
+     * @param coll the <code>Collidable</code> to be tested
      * @return true if the <code>Collidable</code> has intersected/collided with
      * this
      */
