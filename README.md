@@ -9,6 +9,12 @@ I am currently useing this source code within a Java 2D game engine, <a href='ht
 **Watch/star to follow along with progress!**
 
 
+###Download
+You can download the source code right off of <a href='https://github.com/Blunderchips/Java-2D-polygon-collision/archive/master.zip' title='download'>GitHub</a> or you can just clone the repository:
+
+HTTPS: https://github.com/Blunderchips/Java-2D-polygon-collision.git <br/>
+SSH: git@github.com:Blunderchips/Java-2D-polygon-collision.git <br/>
+
 ###Use
 either create a new <code>Collidable</code> or make your class extend <code>Collidable</code> to use, once you have done that you will have full acsess to the class and all its functionality.
 
